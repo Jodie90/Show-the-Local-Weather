@@ -1,0 +1,48 @@
+* {
+	marging: 0;
+	padding: 0;
+}
+body {
+	font-family: "Microsoft YaHei", Verdana, Geneva,Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	text-align:center;
+	margin:0px auto;
+}
+h1 {
+	color: orange;	
+	display: inline-block;	
+	vertical-align: 8px;
+}
+h4 {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.1;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+hr {
+	width: 95%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #eee;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+}
+img {
+	dsaplay: block;
+	height: auto;
+	vertical-align: middle;
+}
+p {
+	margin: 0 0 10px;
+}
+table {
+	margin: 0px auto;	
+}
+td{
+	padding: .5em 3em;
+}

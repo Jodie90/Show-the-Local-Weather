@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Show the Local Weather</title>
+		<link rel="stylesheet" href="styles/bootstrap.min.css" />
+		<link rel="stylesheet" href="styles/layout.css" type="text/css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<header class="col-xs-12 text-center">
+					<a href="http://www.juhe.cn"><img class="img-responsive" src="images/juhe.png"></a>
+					<h1>天气应用</h1>
+				</header>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<div class="text-center">
+						<hr />
+						<h4 id="temperature">今天天气：</h4>
+						<p id="humidity">湿度：</p>
+						<p id="dressing_index">穿衣指数：</p>
+						<p id="wash_index">洗车指数：</p>
+						<p id="travel_index">旅行指数：</p>
+						<p id="exercise_index">锻炼指数：</p>
+						<p id="uv_index">紫外线指数：</p>
+					</div>	
+					<hr />				
+				</div>
+				<h4 class="text-center">未来6天天气</h4>				
+			</div>						
+		</div>
+		<script src="scripts/jquery.min.js"></script>
+		<script src="scripts/json2.js"></script>
+		<script src="scripts/bootstrap.min.js"></script>
+		<script src="scripts/global.js"></script>
+	</body>
+</html>
