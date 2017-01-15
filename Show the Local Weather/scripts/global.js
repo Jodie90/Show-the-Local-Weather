@@ -1,11 +1,4 @@
 $(document).ready(function() {
-	var temperature;//天气温度
-	var humidity;//湿度
-	var dressing_index;//穿衣指数
-	var wash_index;//洗车指数
-	var travel_index;//旅行指数
-	var exercise_index;//锻炼指数
-	var uv_index;//紫外线指数 
 
     if(navigator.geolocation) {
     	navigator.geolocation.getCurrentPosition(function(position) {
@@ -24,7 +17,7 @@ $(document).ready(function() {
 							var sk_keys = Object.keys(sk_obj);
 							sk_keys.forEach(function(sk_key) {
 								if(sk_key == "humidity") {//显示湿度
-									humidity = sk_obj[sk_key];
+									var humidity = sk_obj[sk_key];
 									var humidity_span = document.createElement("span");
 									var humidity_span_text = document.createTextNode(humidity);
 									humidity_span.appendChild(humidity_span_text);
@@ -37,16 +30,17 @@ $(document).ready(function() {
 							var today_obj = result_obj[result_key];
 							var today_keys = Object.keys(today_obj);
 							today_keys.forEach(function(today_key) {
-								if(today_key == "temperature") {//显示天气温度
-									temperature = today_obj[today_key];
+								if(today_key == "temperature" || today_key == "weather" || today_key == "wind" || today_key == "week" || 
+								today_key == "city" || today_key == "date_y") {//显示天气温度
+									var temperature = today_obj[today_key];
 									var temperature_span = document.createElement("span");
-									var temperature_span_text = document.createTextNode(temperature);
+									var temperature_span_text = document.createTextNode(temperature + " ");
 									temperature_span.appendChild(temperature_span_text);
 									//document.getElementById("temperature").appendChild(temperature_span);
 									$("#temperature").append(temperature_span);
 								}
 								if(today_key == "dressing_index") {//显示穿衣指数
-									dressing_index = today_obj[today_key];
+									var dressing_index = today_obj[today_key];
 									var dressing_span = document.createElement("span");
 									var dressing_span_text = document.createTextNode(dressing_index);
 									dressing_span.appendChild(dressing_span_text);
@@ -54,7 +48,7 @@ $(document).ready(function() {
 									$("#dressing_index").append(dressing_span);
 								}
 								if(today_key == "wash_index") {//显示洗车指数
-									wash_index = today_obj[today_key];
+									var wash_index = today_obj[today_key];
 									var wash_span = document.createElement("span");
 									var wash_span_text = document.createTextNode(wash_index);
 									wash_span.appendChild(wash_span_text);
@@ -62,7 +56,7 @@ $(document).ready(function() {
 									$("#wash_index").append(wash_span);
 								}
 								if(today_key == "travel_index") {//显示旅行指数
-									travel_index = today_obj[today_key];
+									var travel_index = today_obj[today_key];
 									var travel_span = document.createElement("span");
 									var travel_span_text = document.createTextNode(travel_index);
 									travel_span.appendChild(travel_span_text);
@@ -70,7 +64,7 @@ $(document).ready(function() {
 									$("#travel_index").append(travel_span);
 								}
 								if(today_key == "exercise_index") {//显示锻炼指数
-									exercise_index = today_obj[today_key];
+									var exercise_index = today_obj[today_key];
 									var exercise_span = document.createElement("span");
 									var exercise_span_text = document.createTextNode(exercise_index);
 									exercise_span.appendChild(exercise_span_text);
@@ -78,7 +72,7 @@ $(document).ready(function() {
 									$("#exercise_index").append(exercise_span);
 								}
 								if(today_key == "uv_index") {//显示紫外线指数
-									uv_index = today_obj[today_key];
+									var uv_index = today_obj[today_key];
 									var uv_span = document.createElement("span");
 									var uv_span_text = document.createTextNode(uv_index);
 									uv_span.appendChild(uv_span_text);
@@ -90,7 +84,6 @@ $(document).ready(function() {
 							if(result_key == "future") {
 								var future_obj = result_obj[result_key];
 								var table_weath = document.createElement("table");
-								//table_weath.addClass("text-center");
 								var table_tr = document.createElement("tr");
 								for(var i = 1; i < future_obj.length; i ++) {
 									var table_td = document.createElement("td");
