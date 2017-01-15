@@ -31,7 +31,7 @@ $(document).ready(function() {
 							var today_keys = Object.keys(today_obj);
 							today_keys.forEach(function(today_key) {
 								if(today_key == "temperature" || today_key == "weather" || today_key == "wind" || today_key == "week" || 
-								today_key == "city" || today_key == "date_y") {//显示天气温度
+								today_key == "city" || today_key == "date_y") {//显示当天天气详情
 									var temperature = today_obj[today_key];
 									var temperature_span = document.createElement("span");
 									var temperature_span_text = document.createTextNode(temperature + " ");
